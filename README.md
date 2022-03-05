@@ -1,9 +1,5 @@
 # ![RealWorld Example App](logo.png)
 
-[![Codecov branch](https://img.shields.io/codecov/c/github/goodhabitz/conduit-vue/master?logo=codecov&style=for-the-badge)](https://app.codecov.io/gh/goodhabitz/conduit-vue/branch/master)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/goodhabitz/conduit-vue/Test/master?label=master&logo=github&style=for-the-badge)](https://github.com/goodhabitz/conduit-vue/actions?query=branch%3Amaster)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/goodhabitz/conduit-vue/Test/script-setup?label=ref-sugar&logo=github&style=for-the-badge)](https://github.com/goodhabitz/conduit-vue/actions?query=branch%3Aref-sugar)
-
 > ### [Vue3](https://v3.vuejs.org/) codebase containing real world examples (CRUD, auth, advanced patterns, etc) that adheres to the [RealWorld](https://github.com/gothinkster/realworld) spec and API.
 
 - [Demo](https://goodhabitz-conduit-vue.pages.dev/)
