@@ -1,5 +1,14 @@
 {
-  "name": "vue3-realworld-example-app",
+  "name": "conduit-vue",
+  "contributors":[
+    "<imutoe@gmail.com>",
+    "<israelroldan@goodhabitz.com>",
+    "<levchak.sanek@gmail.com>",
+    "<mutoe@foxmail.com>",
+    "<plumrx@outlook.com>",
+    "<sajadhsm@gmail.com>",
+    "<soeren.martius@gmail.com>"
+  ],
   "version": "1.1.0",
   "license": "MIT",
   "scripts": {
