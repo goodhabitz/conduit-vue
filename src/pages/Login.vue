@@ -67,7 +67,7 @@ import { updateUser } from 'src/store/user'
 import { reactive, ref } from 'vue'
 
 const formRef = ref<HTMLFormElement | null>(null)
-const form = reactive<PostLoginForm>({
+const form: PostLoginForm = reactive({
   email: '',
   password: '',
 })
@@ -75,6 +75,8 @@ const form = reactive<PostLoginForm>({
 const errors = ref<PostLoginErrors>({})
 
 const login = async () => {
+  errors.value = {}
+
   if (!formRef.value?.checkValidity()) return
 
   const result = await postLogin(form)

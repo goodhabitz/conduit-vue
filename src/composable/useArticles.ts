@@ -12,7 +12,7 @@ import { useRoute } from 'vue-router'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/explicit-function-return-type
 export function useArticles () {
-  const { articlesType, tag, username, metaChanged } = getArticlesMeta()
+  const { articlesType, tag, username, metaChanged } = useArticlesMeta()
 
   const articles = ref<Article[]>([])
   const articlesCount = ref(0)
@@ -24,17 +24,13 @@ export function useArticles () {
 
     if (articlesType.value === 'my-feed') {
       responsePromise = getFeeds(page.value)
-    }
-    if (articlesType.value === 'tag-feed' && tag.value !== undefined) {
+    } else if (articlesType.value === 'tag-feed' && tag.value) {
       responsePromise = getArticlesByTag(tag.value, page.value)
-    }
-    if (articlesType.value === 'user-feed' && username.value !== undefined) {
+    } else if (articlesType.value === 'user-feed' && username.value) {
       responsePromise = getProfileArticles(username.value, page.value)
-    }
-    if (articlesType.value === 'user-favorites-feed' && username.value !== undefined) {
+    } else if (articlesType.value === 'user-favorites-feed' && username.value) {
       responsePromise = getFavoritedArticles(username.value, page.value)
-    }
-    if (articlesType.value === 'global-feed') {
+    } else if (articlesType.value === 'global-feed') {
       responsePromise = getArticles(page.value)
     }
 
@@ -91,13 +87,13 @@ const routeNameToArticlesType: Partial<Record<AppRouteNames, ArticlesType>> = ({
   'profile-favorites': 'user-favorites-feed',
 })
 
-interface GetArticlesMetaReturn {
+interface UseArticlesMetaReturn {
   tag: ComputedRef<string>
   username: ComputedRef<string>
   articlesType: ComputedRef<ArticlesType>
   metaChanged: ComputedRef<string>
 }
-function getArticlesMeta (): GetArticlesMetaReturn {
+function useArticlesMeta (): UseArticlesMetaReturn {
   const route = useRoute()
 
   const tag = ref('')
